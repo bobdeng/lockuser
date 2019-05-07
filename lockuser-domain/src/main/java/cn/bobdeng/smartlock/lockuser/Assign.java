@@ -41,4 +41,8 @@ public class Assign {
     public boolean is(UserLevel level) {
         return privilege.is(level);
     }
+
+    public boolean canManage(Assign assign) {
+        return privilege.canManage(assign.privilege);
+    }
 }

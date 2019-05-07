@@ -18,4 +18,8 @@ class PrivilegeLevel {
     public boolean canManage(UserLevel userLevel) {
         return level.value>userLevel.value;
     }
+
+    public boolean canManage(PrivilegeLevel level) {
+        return this.canManage(level.level);
+    }
 }

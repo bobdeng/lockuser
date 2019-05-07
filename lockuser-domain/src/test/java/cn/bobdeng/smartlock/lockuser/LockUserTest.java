@@ -75,6 +75,16 @@ public class LockUserTest {
         LockUserRepositoryImpl.time = start + 1000;
         LockUser adminUser = owner.createUser(LOCK_ID, USER_OWNER, UserLevel.ADMIN, start, end);
     }
+    @Test(expected = NoPrivilegeException.class)
+    public void cantAssignHigher() throws TimeRangeInvalidException,NoPrivilegeException {
+        LockUser owner = createOwner();
+        long start = System.currentTimeMillis();
+        long end = start + 100000;
+        LockUserRepositoryImpl.time = start + 1000;
+        LockUser adminUser1 = owner.createUser(LOCK_ID, "user_admin_1", UserLevel.ADMIN, start, end);
+        LockUser adminUser2 = owner.createUser(LOCK_ID, "user_admin_2", UserLevel.ADMIN, start, end);
+        adminUser1.createUser(LOCK_ID, "user_admin_2", UserLevel.NORMAL, start, end);
+    }
 
     @Test
     public void reAssign() throws TimeRangeInvalidException,NoPrivilegeException {
@@ -94,7 +104,6 @@ public class LockUserTest {
         long end = start + 100000;
         LockUserRepositoryImpl.time = start + 1000;
         LockUser adminUser = owner.createUser(LOCK_ID, USER_ADMIN, UserLevel.ADMIN, start, end);
-        adminUser = owner.createUser(LOCK_ID, USER_ADMIN, UserLevel.NORMAL, start, end);
         owner.removeUser(adminUser);
         assertNull(LockUserRepositories.find(LOCK_ID,USER_ADMIN));
     }
@@ -106,6 +115,17 @@ public class LockUserTest {
         long end = start + 100000;
         LockUserRepositoryImpl.time = start + 1000;
         owner.removeUser(owner);
+    }
+
+    @Test(expected = NoPrivilegeException.class)
+    public void cantRemoveHigher() throws TimeRangeInvalidException,NoPrivilegeException {
+        LockUser owner = createOwner();
+        long start = System.currentTimeMillis();
+        long end = start + 100000;
+        LockUserRepositoryImpl.time = start + 1000;
+        LockUser adminUser1 = owner.createUser(LOCK_ID, "user_003", UserLevel.ADMIN, start, end);
+        LockUser adminUser2 = owner.createUser(LOCK_ID, "user_003", UserLevel.ADMIN, start, end);
+        adminUser1.removeUser(adminUser2);
     }
 
 

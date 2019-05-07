@@ -44,4 +44,8 @@ class LockPrivilege {
     public boolean is(UserLevel level) {
         return this.level.level==level;
     }
+
+    public boolean canManage(LockPrivilege privilege) {
+        return level.canManage(privilege.level);
+    }
 }
