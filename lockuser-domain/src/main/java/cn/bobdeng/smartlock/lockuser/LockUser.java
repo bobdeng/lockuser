@@ -10,9 +10,9 @@ public class LockUser {
         this.assign = assign;
     }
 
-    public LockUser createUser(LockUserId id, UserName userName,LockPrivilege lockPrivilege) throws TimeRangeInvalidException, NoPrivilegeException {
-        LockUserManageRuleChecker.checkAssign(this, id,lockPrivilege);
-        LockUser lockUser = new LockUser(id, new Assign(lockPrivilege,userName));
+    public LockUser createUser(LockUserId id, UserName userName, LockPrivilege lockPrivilege) throws TimeRangeInvalidException, NoPrivilegeException {
+        LockUserManageRuleChecker.checkAssign(this, id, lockPrivilege);
+        LockUser lockUser = new LockUser(id, new Assign(lockPrivilege, userName));
         LockUserRepositories.saveLockUser(lockUser);
         return lockUser;
     }
@@ -36,6 +36,10 @@ public class LockUser {
 
     public boolean isBigger(UserLevel level) {
         return assign.isBigger(level);
+    }
+
+    public String getName() {
+        return assign.userName.name;
     }
 
 }

@@ -1,6 +1,5 @@
-package cn.bobdeng.smartlock.lock;
+package cn.bobdeng.smartlock.lockuser;
 
-import cn.bobdeng.smartlock.domain.lock.LockUser;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,43 +16,33 @@ import javax.persistence.*;
 public class LockUserDO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @Column(length = 36)
     private String userId;
+    @Column(length = 36)
+    private String lockId;
     @Column(length = 20)
     private String name;
-    @Column(length = 20)
-    private String lockName;
     private int level;
     private Long start;
     private Long end;
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "lock_id",foreignKey = @javax.persistence.ForeignKey(name="none",value = ConstraintMode.NO_CONSTRAINT))
-    private LockDO lock;
 
     public static LockUserDO from(LockUser user) {
         return LockUserDO.builder()
-                .lock(LockDO.fromEntity(user.getLock()))
-                .start(user.getStart())
-                .end(user.getEnd())
-                .level(user.getLevel())
-                .userId(user.getUserId())
-                .id(user.getId())
-                .name(user.getName())
-                .lockName(user.getLockName())
+                .start(user.assign.privilege.timeRange.start)
+                .end(user.assign.privilege.timeRange.end)
+                .level(user.assign.privilege.level.level.value)
+                .userId(user.id.userId.id)
+                .name(user.assign.userName.name)
                 .build();
     }
 
     public LockUser toEntity() {
-        return LockUser.builder()
-                .start(this.getStart())
-                .lockName(this.getLockName())
-                .end(this.getEnd())
-                .id(this.getId())
-                .lock(lock.toEntity())
-                .level(this.getLevel())
-                .userId(this.getUserId())
-                .name(this.getName())
-                .build();
+        LockUserId id = new LockUserId(lockId, userId);
+        UserName userName = new UserName(name);
+        UserLevel userLevel = UserLevel.of(level);
+        TimeRange timeRange = new TimeRange(start, end);
+        LockPrivilege lockPrivilege = LockPrivilege.newPrivilege(userLevel, timeRange);
+        return LockUserFactory.newInstance(id, userName, lockPrivilege);
     }
 }
