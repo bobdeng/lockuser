@@ -39,22 +39,35 @@ public class LockUser {
     }
 
     public LockUser createUser(String lockId, String userId, UserLevel level, long start, long end) throws TimeRangeInvalidException, NoPrivilegeException {
-        if (!this.canManage(level)) {
-            throw new NoPrivilegeException();
-        }
-        LockUser existLockUser = LockUserRepositories.find(lockId, userId);
-        if (existLockUser != null && existLockUser.isOwner()) {
-            throw new NoPrivilegeException();
-        }
-        if (!this.canManage(existLockUser)) {
-            throw new NoPrivilegeException();
-        }
+        checkAssign(lockId, userId, level, start, end);
         LockUser lockUser = new LockUser(new LockUserId(lockId, userId), Assign.newUser(level, start, end));
+        LockUserRepositories.saveLockUser(lockUser);
+        return lockUser;
+    }
+
+    private void checkAssign(String lockId, String userId, UserLevel level, long start, long end) throws NoPrivilegeException, TimeRangeInvalidException {
+        LockUser existLockUser = LockUserRepositories.find(lockId, userId);
+        checkAssignLevel(level, existLockUser);
+        checkAssignTimeRange(start, end);
+    }
+
+    private void checkAssignTimeRange(long start, long end) throws TimeRangeInvalidException {
         if (this.overAssignTimeRange(start, end)) {
             throw new TimeRangeInvalidException();
         }
-        LockUserRepositories.saveLockUser(lockUser);
-        return lockUser;
+    }
+
+    private void checkAssignLevel(UserLevel level, LockUser existLockUser) throws NoPrivilegeException {
+        if (!this.canManage(level)) {
+            throw new NoPrivilegeException();
+        }
+        checkUserManage(existLockUser);
+    }
+
+    private void checkUserManage(LockUser existLockUser) throws NoPrivilegeException {
+        if (!this.canManage(existLockUser)) {
+            throw new NoPrivilegeException();
+        }
     }
 
     private boolean overAssignTimeRange(long start, long end) {
@@ -70,12 +83,7 @@ public class LockUser {
     }
 
     public void removeUser(LockUser user) throws NoPrivilegeException {
-        if (user.isOwner()) {
-            throw new NoPrivilegeException();
-        }
-        if (!this.canManage(user)) {
-            throw new NoPrivilegeException();
-        }
+        checkUserManage(user);
         LockUserRepositories.remove(user);
     }
 

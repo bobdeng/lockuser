@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="283a7f65-1c36-44ef-a54f-c501edabe29c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/Assign.java" beforeDir="false" afterPath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/Assign.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockPrivilege.java" beforeDir="false" afterPath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockPrivilege.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/PrivilegeLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/PrivilegeLevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lockuser-domain/src/test/java/cn/bobdeng/smartlock/lockuser/LockUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lockuser-domain/src/test/java/cn/bobdeng/smartlock/lockuser/LockUserTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -19,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="72" column="16" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="16" />
+            <state relative-caret-position="256">
+              <caret line="65" column="9" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
               <folding>
                 <element signature="e#93#94#0" expanded="true" />
                 <element signature="e#121#122#0" expanded="true" />
@@ -33,11 +29,9 @@
                 <element signature="e#875#876#0" expanded="true" />
                 <element signature="e#1519#1520#0" expanded="true" />
                 <element signature="e#1547#1548#0" expanded="true" />
-                <element signature="e#1953#1954#0" expanded="true" />
+                <element signature="e#2473#2474#0" expanded="true" />
                 <element signature="e#1996#1997#0" expanded="true" />
                 <element signature="e#2024#2025#0" expanded="true" />
-                <element signature="e#2380#2381#0" expanded="true" />
-                <element signature="e#2408#2409#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,7 +110,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lockuser-domain/src/test/java/cn/bobdeng/smartlock/lockuser/LockUserTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="239">
@@ -202,8 +196,8 @@
         <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/Assign.java" />
         <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockPrivilege.java" />
         <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/PrivilegeLevel.java" />
-        <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUser.java" />
         <option value="$PROJECT_DIR$/lockuser-domain/src/test/java/cn/bobdeng/smartlock/lockuser/LockUserTest.java" />
+        <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUser.java" />
       </list>
     </option>
   </component>
@@ -327,7 +321,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557198197026" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557198506965" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -436,23 +430,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557192231832</updated>
-      <workItem from="1557192233089" duration="5878000" />
+      <workItem from="1557192233089" duration="6093000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LockUserTest - 2019.05.07 at 10h 52m 24s.xml">
-      <configuration name="LockUserTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LockUserTest - 2019.05.07 at 10h 53m 33s.xml">
-      <configuration name="LockUserTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LockUserTest - 2019.05.07 at 10h 55m 33s.xml">
-      <configuration name="LockUserTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LockUserTest_removeAssign - 2019.05.07 at 10h 56m 46s.xml">
-      <configuration name="LockUserTest.removeAssign" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="LockUserTest_removeAssign - 2019.05.07 at 10h 56m 57s.xml">
       <configuration name="LockUserTest.removeAssign" configurationId="JUnit" />
     </history-entry>
@@ -471,9 +453,21 @@
     <history-entry file="LockUserTest - 2019.05.07 at 10h 59m 12s.xml">
       <configuration name="LockUserTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="LockUserTest - 2019.05.07 at 11h 02m 48s.xml">
+      <configuration name="LockUserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LockUserTest - 2019.05.07 at 11h 03m 18s.xml">
+      <configuration name="LockUserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LockUserTest - 2019.05.07 at 11h 03m 53s.xml">
+      <configuration name="LockUserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LockUserTest - 2019.05.07 at 11h 06m 19s.xml">
+      <configuration name="LockUserTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5878000" />
+    <option name="totallyTimeSpent" value="6093000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1416" height="817" extended-state="0" />
@@ -535,7 +529,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUser.java</url>
-          <line>79</line>
+          <line>94</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
@@ -707,10 +701,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/test/java/cn/bobdeng/smartlock/lockuser/LockUserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="82" column="51" lean-forward="true" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="72" column="16" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="16" />
+        <state relative-caret-position="256">
+          <caret line="65" column="9" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
           <folding>
             <element signature="e#93#94#0" expanded="true" />
             <element signature="e#121#122#0" expanded="true" />
@@ -720,21 +724,9 @@
             <element signature="e#875#876#0" expanded="true" />
             <element signature="e#1519#1520#0" expanded="true" />
             <element signature="e#1547#1548#0" expanded="true" />
-            <element signature="e#1953#1954#0" expanded="true" />
+            <element signature="e#2473#2474#0" expanded="true" />
             <element signature="e#1996#1997#0" expanded="true" />
             <element signature="e#2024#2025#0" expanded="true" />
-            <element signature="e#2380#2381#0" expanded="true" />
-            <element signature="e#2408#2409#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/test/java/cn/bobdeng/smartlock/lockuser/LockUserTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="82" column="51" lean-forward="true" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
