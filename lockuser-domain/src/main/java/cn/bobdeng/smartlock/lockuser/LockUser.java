@@ -22,23 +22,9 @@ public class LockUser {
         return assign.notExpire();
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        LockUser lockUser = (LockUser) o;
-        return Objects.equals(id, lockUser.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
     boolean overAssignTimeRange(Long start, Long end) {
         return assign.timeRangeOverflow(start, end);
     }
-
 
     boolean is(UserLevel normal) {
         return assign.is(normal);
@@ -52,4 +38,5 @@ public class LockUser {
     public boolean isBigger(UserLevel level) {
         return assign.isBigger(level);
     }
+
 }
