@@ -3,12 +3,12 @@ package cn.bobdeng.smartlock.lockuser;
 import java.util.Objects;
 
 class LockUserId {
-    String lockId;
-    String userId;
+    LockId lockId;
+    UserID userId;
 
     public LockUserId(String lockId, String userId) {
-        this.lockId = lockId;
-        this.userId = userId;
+        this.lockId = new LockId(lockId);
+        this.userId = new UserID(userId);
     }
 
     @Override

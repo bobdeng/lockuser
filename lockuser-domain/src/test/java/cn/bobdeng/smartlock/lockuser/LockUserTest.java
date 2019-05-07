@@ -25,7 +25,6 @@ public class LockUserTest {
     public void testOwnerAssign() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         LockUser adminUser = owner.createUser(LOCK_ID, USER_ADMIN, UserLevel.ADMIN, null, null);
-        assertNotNull(adminUser);
         assertEquals(LockUserRepositories.find(LOCK_ID, USER_ADMIN), adminUser);
         assertEquals(LockUserRepositories.find(LOCK_ID, USER_ADMIN).assign, adminUser.assign);
         LockUserRepositoryImpl.time = 10000;
@@ -84,7 +83,7 @@ public class LockUserTest {
         long start = System.currentTimeMillis();
         long end = start + 100000;
         LockUserRepositoryImpl.time = start + 1000;
-        LockUser adminUser = owner.createUser(LOCK_ID, USER_OWNER, UserLevel.ADMIN, start, end);
+        owner.createUser(LOCK_ID, USER_OWNER, UserLevel.ADMIN, start, end);
     }
 
     @Test(expected = NoPrivilegeException.class)
@@ -98,8 +97,8 @@ public class LockUserTest {
     @Test
     public void reAssign() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
-        LockUser adminUser = ownerCreateAdmin(owner);
-        adminUser = owner.createUser(LOCK_ID, USER_ADMIN, UserLevel.NORMAL, start, end);
+        ownerCreateAdmin(owner);
+        LockUser adminUser = owner.createUser(LOCK_ID, USER_ADMIN, UserLevel.NORMAL, start, end);
         assertTrue(adminUser.is(UserLevel.NORMAL));
     }
 

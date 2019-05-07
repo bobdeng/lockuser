@@ -6,13 +6,7 @@ public class Assign {
 
     public static Assign newOwner() {
         Assign assign=new Assign();
-        assign.privilege=LockPrivilege.newOwner();
-        return assign;
-    }
-
-    public static Assign newUser(UserLevel userLevel) {
-        Assign assign=new Assign();
-        assign.privilege=LockPrivilege.newPrivilege(userLevel);
+        assign.privilege=LockPrivilege.newPrivilege(UserLevel.OWNER);
         return assign;
     }
 
@@ -22,9 +16,6 @@ public class Assign {
         return assign;
     }
 
-    public boolean isOwner() {
-        return privilege.isOwner();
-    }
 
     public boolean canManage(UserLevel userLevel) {
         return privilege.canManage(userLevel);

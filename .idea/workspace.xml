@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="283a7f65-1c36-44ef-a54f-c501edabe29c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/UserID.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUserManageRuleChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUserManageRuleChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lockuser-domain/src/test/java/cn/bobdeng/smartlock/lockuser/LockUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lockuser-domain/src/test/java/cn/bobdeng/smartlock/lockuser/LockUserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lockuser-domain/target/test-classes/cn/bobdeng/smartlock/lockuser/LockUserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/lockuser-domain/target/test-classes/cn/bobdeng/smartlock/lockuser/LockUserTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/Assign.java" beforeDir="false" afterPath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/Assign.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockPrivilege.java" beforeDir="false" afterPath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockPrivilege.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUserId.java" beforeDir="false" afterPath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUserId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/PrivilegeLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/PrivilegeLevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lockuser-domain/target/classes/cn/bobdeng/smartlock/lockuser/Assign.class" beforeDir="false" afterPath="$PROJECT_DIR$/lockuser-domain/target/classes/cn/bobdeng/smartlock/lockuser/Assign.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lockuser-domain/target/classes/cn/bobdeng/smartlock/lockuser/LockPrivilege.class" beforeDir="false" afterPath="$PROJECT_DIR$/lockuser-domain/target/classes/cn/bobdeng/smartlock/lockuser/LockPrivilege.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -17,111 +21,38 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/lockuser$LockUserTest.ic" NAME="LockUserTest Coverage Results" MODIFIED="1557208509846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cn.bobdeng.smartlock.lockuser.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="197" />
+  </component>
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUser.java">
+        <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUserRepositories.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="21" />
+            <state relative-caret-position="225">
+              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
               <folding>
-                <element signature="e#972#973#0" expanded="true" />
-                <element signature="e#1013#1014#0" expanded="true" />
-                <element signature="e#608#609#0" expanded="true" />
-                <element signature="e#655#656#0" expanded="true" />
-                <element signature="e#1519#1520#0" expanded="true" />
-                <element signature="e#1547#1548#0" expanded="true" />
-                <element signature="e#1996#1997#0" expanded="true" />
-                <element signature="e#2024#2025#0" expanded="true" />
-                <element signature="e#1505#1506#0" expanded="true" />
-                <element signature="e#1533#1534#0" expanded="true" />
+                <element signature="e#196#197#0" expanded="true" />
+                <element signature="e#257#258#0" expanded="true" />
+                <element signature="e#313#314#0" expanded="true" />
+                <element signature="e#362#363#0" expanded="true" />
+                <element signature="e#505#506#0" expanded="true" />
+                <element signature="e#552#553#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUserId.java">
+        <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/NoPrivilegeException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUserManageRuleChecker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding>
-                <element signature="e#131#132#0" expanded="true" />
-                <element signature="e#181#182#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/UserLevel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/Assign.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
-              <folding>
-                <element signature="e#580#581#0" expanded="true" />
-                <element signature="e#633#634#0" expanded="true" />
-                <element signature="e#667#668#0" expanded="true" />
-                <element signature="e#695#696#0" expanded="true" />
-                <element signature="e#983#984#0" expanded="true" />
-                <element signature="e#1011#1012#0" expanded="true" />
-                <element signature="e#1087#1088#0" expanded="true" />
-                <element signature="e#1115#1116#0" expanded="true" />
-                <element signature="e#1175#1176#0" expanded="true" />
-                <element signature="e#1203#1204#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockPrivilege.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="21" column="78" selection-start-line="21" selection-start-column="78" selection-end-line="21" selection-end-column="78" />
-              <folding>
-                <element signature="e#657#658#0" expanded="true" />
-                <element signature="e#706#707#0" expanded="true" />
-                <element signature="e#740#741#0" expanded="true" />
-                <element signature="e#768#769#0" expanded="true" />
-                <element signature="e#1167#1168#0" expanded="true" />
-                <element signature="e#1215#1216#0" expanded="true" />
-                <element signature="e#1261#1262#0" expanded="true" />
-                <element signature="e#1289#1290#0" expanded="true" />
-                <element signature="e#1364#1365#0" expanded="true" />
-                <element signature="e#1392#1393#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/PrivilegeLevel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-              <folding>
-                <element signature="e#501#502#0" expanded="true" />
-                <element signature="e#529#530#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -135,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lockuser-domain/src/test/java/cn/bobdeng/smartlock/lockuser/LockUserTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="55" column="79" selection-start-line="55" selection-start-column="79" selection-end-line="55" selection-end-column="79" />
+            <state relative-caret-position="80">
+              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -150,14 +81,90 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lockuser-domain/src/test/java/cn/bobdeng/smartlock/lockuser/LockUserRepositoryImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+            <state relative-caret-position="207">
+              <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#546#547#0" expanded="true" />
+                <element signature="e#446#447#0" expanded="true" />
+                <element signature="e#499#500#0" expanded="true" />
                 <element signature="e#573#574#0" expanded="true" />
                 <element signature="e#628#629#0" expanded="true" />
-                <element signature="e#663#664#0" expanded="true" />
+                <element signature="e#671#672#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/UserID.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+              <folding>
+                <element signature="e#450#451#0" expanded="true" />
+                <element signature="e#489#490#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/PrivilegeLevel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+              <folding>
+                <element signature="e#501#502#0" expanded="true" />
+                <element signature="e#551#552#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockPrivilege.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="e#657#658#0" expanded="true" />
+                <element signature="e#706#707#0" expanded="true" />
+                <element signature="e#740#741#0" expanded="true" />
+                <element signature="e#768#769#0" expanded="true" />
+                <element signature="e#1167#1168#0" expanded="true" />
+                <element signature="e#1215#1216#0" expanded="true" />
+                <element signature="e#1261#1262#0" expanded="true" />
+                <element signature="e#1289#1290#0" expanded="true" />
+                <element signature="e#1364#1365#0" expanded="true" />
+                <element signature="e#1392#1393#0" expanded="true" />
+                <element signature="e#1467#1468#0" expanded="true" />
+                <element signature="e#1495#1496#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/Assign.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+              <folding>
+                <element signature="e#1194#1195#0" expanded="true" />
+                <element signature="e#1254#1255#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-40">
+              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+              <folding>
+                <element signature="e#1505#1506#0" expanded="true" />
+                <element signature="e#1550#1551#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -184,20 +191,22 @@
         <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/UserName.java" />
         <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/UserLevel.java" />
         <option value="$PROJECT_DIR$/lockuser-domain/pom.xml" />
-        <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUserId.java" />
         <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUserFactory.java" />
         <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/TimeRangeInvalidException.java" />
         <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/NoPrivilegeException.java" />
         <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUserRepositories.java" />
         <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUserRepository.java" />
         <option value="$PROJECT_DIR$/lockuser-domain/src/test/java/cn/bobdeng/smartlock/lockuser/LockUserRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/PrivilegeLevel.java" />
-        <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/Assign.java" />
-        <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockPrivilege.java" />
         <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/TimeRange.java" />
-        <option value="$PROJECT_DIR$/lockuser-domain/src/test/java/cn/bobdeng/smartlock/lockuser/LockUserTest.java" />
-        <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUser.java" />
         <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUserManageRuleChecker.java" />
+        <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUser.java" />
+        <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUserId.java" />
+        <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/UserID.java" />
+        <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockId.java" />
+        <option value="$PROJECT_DIR$/lockuser-domain/src/test/java/cn/bobdeng/smartlock/lockuser/LockUserTest.java" />
+        <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/PrivilegeLevel.java" />
+        <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockPrivilege.java" />
+        <option value="$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/Assign.java" />
       </list>
     </option>
   </component>
@@ -321,7 +330,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557207506496" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557208922694" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -430,59 +439,58 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557192231832</updated>
-      <workItem from="1557192233089" duration="8601000" />
+      <workItem from="1557192233089" duration="9903000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LockUserTest - 2019.05.07 at 11h 20m 14s.xml">
-      <configuration name="LockUserTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LockUserTest - 2019.05.07 at 11h 20m 26s.xml">
-      <configuration name="LockUserTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LockUserTest - 2019.05.07 at 11h 20m 40s.xml">
-      <configuration name="LockUserTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LockUserTest - 2019.05.07 at 11h 20m 51s.xml">
-      <configuration name="LockUserTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LockUserTest - 2019.05.07 at 11h 21m 03s.xml">
-      <configuration name="LockUserTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LockUserTest - 2019.05.07 at 11h 21m 13s.xml">
-      <configuration name="LockUserTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LockUserTest - 2019.05.07 at 11h 22m 17s.xml">
-      <configuration name="LockUserTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LockUserTest - 2019.05.07 at 11h 22m 37s.xml">
-      <configuration name="LockUserTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LockUserTest - 2019.05.07 at 11h 26m 39s.xml">
-      <configuration name="LockUserTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="LockUserTest - 2019.05.07 at 13h 36m 10s.xml">
+      <configuration name="LockUserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LockUserTest - 2019.05.07 at 13h 37m 42s.xml">
+      <configuration name="LockUserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LockUserTest - 2019.05.07 at 13h 38m 28s.xml">
+      <configuration name="LockUserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LockUserTest - 2019.05.07 at 13h 38m 51s.xml">
+      <configuration name="LockUserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LockUserTest - 2019.05.07 at 13h 43m 33s.xml">
+      <configuration name="LockUserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LockUserTest - 2019.05.07 at 13h 52m 35s.xml">
+      <configuration name="LockUserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LockUserTest - 2019.05.07 at 13h 54m 08s.xml">
+      <configuration name="LockUserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LockUserTest - 2019.05.07 at 13h 54m 41s.xml">
+      <configuration name="LockUserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LockUserTest - 2019.05.07 at 13h 54m 48s.xml">
+      <configuration name="LockUserTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LockUserTest - 2019.05.07 at 13h 55m 11s.xml">
       <configuration name="LockUserTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8601000" />
+    <option name="totallyTimeSpent" value="9903000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1416" height="817" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Capture Tool" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2496361" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30858806" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="FindBugs-IDEA" />
       <window_info anchor="bottom" id="Analysis" />
-      <window_info anchor="bottom" id="Calisthenics" weight="0.32905984" />
+      <window_info anchor="bottom" id="Calisthenics" visible="true" weight="0.21082622" />
       <window_info anchor="bottom" id="Terminal" weight="0.32905984" />
       <window_info anchor="bottom" id="CheckStyle" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
@@ -494,7 +502,7 @@
       <window_info anchor="bottom" id="Messages" weight="0.32905984" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.24643874" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24643874" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3988604" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -505,6 +513,7 @@
       <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Coverage" side_tool="true" visible="true" weight="0.14410481" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -516,12 +525,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/TimeRange.java</url>
-          <line>16</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/lockuser-domain/src/test/java/cn/bobdeng/smartlock/lockuser/LockUserTest.java</url>
           <line>62</line>
@@ -540,16 +543,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/UserName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-          <folding>
-            <element signature="e#140#141#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/Test.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -579,10 +572,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/NoPrivilegeException.java">
+    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="135">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUserManageRuleChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#131#132#0" expanded="true" />
+            <element signature="e#181#182#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/UserName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+          <folding>
+            <element signature="e#140#141#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/UserLevel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockId.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding>
+            <element signature="e#108#109#0" expanded="true" />
+            <element signature="e#136#137#0" expanded="true" />
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#489#490#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUserId.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -596,80 +637,40 @@
             <element signature="e#313#314#0" expanded="true" />
             <element signature="e#362#363#0" expanded="true" />
             <element signature="e#505#506#0" expanded="true" />
-            <element signature="e#538#539#0" expanded="true" />
+            <element signature="e#552#553#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUserRepository.java">
+    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/NoPrivilegeException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/test/java/cn/bobdeng/smartlock/lockuser/LockUserRepositoryImpl.java">
+    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/TimeRange.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#546#547#0" expanded="true" />
-            <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#628#629#0" expanded="true" />
-            <element signature="e#663#664#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/UserLevel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        <state relative-caret-position="405">
+          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/PrivilegeLevel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        <state relative-caret-position="75">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
           <folding>
             <element signature="e#501#502#0" expanded="true" />
-            <element signature="e#529#530#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUserId.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/Assign.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
-          <folding>
-            <element signature="e#580#581#0" expanded="true" />
-            <element signature="e#633#634#0" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
-            <element signature="e#695#696#0" expanded="true" />
-            <element signature="e#983#984#0" expanded="true" />
-            <element signature="e#1011#1012#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1115#1116#0" expanded="true" />
-            <element signature="e#1175#1176#0" expanded="true" />
-            <element signature="e#1203#1204#0" expanded="true" />
+            <element signature="e#551#552#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockPrivilege.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="21" column="78" selection-start-line="21" selection-start-column="78" selection-end-line="21" selection-end-column="78" />
+        <state relative-caret-position="176">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="e#657#658#0" expanded="true" />
             <element signature="e#706#707#0" expanded="true" />
@@ -681,53 +682,66 @@
             <element signature="e#1289#1290#0" expanded="true" />
             <element signature="e#1364#1365#0" expanded="true" />
             <element signature="e#1392#1393#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/TimeRange.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/test/java/cn/bobdeng/smartlock/lockuser/LockUserTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="55" column="79" selection-start-line="55" selection-start-column="79" selection-end-line="55" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1467#1468#0" expanded="true" />
+            <element signature="e#1495#1496#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="21" />
+        <state relative-caret-position="-40">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
           <folding>
-            <element signature="e#972#973#0" expanded="true" />
-            <element signature="e#1013#1014#0" expanded="true" />
-            <element signature="e#608#609#0" expanded="true" />
-            <element signature="e#655#656#0" expanded="true" />
-            <element signature="e#1519#1520#0" expanded="true" />
-            <element signature="e#1547#1548#0" expanded="true" />
-            <element signature="e#1996#1997#0" expanded="true" />
-            <element signature="e#2024#2025#0" expanded="true" />
             <element signature="e#1505#1506#0" expanded="true" />
-            <element signature="e#1533#1534#0" expanded="true" />
+            <element signature="e#1550#1551#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/LockUserManageRuleChecker.java">
+    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/test/java/cn/bobdeng/smartlock/lockuser/LockUserRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="207">
+          <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
           <folding>
-            <element signature="e#131#132#0" expanded="true" />
-            <element signature="e#181#182#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#628#629#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/UserID.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+          <folding>
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#489#490#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/main/java/cn/bobdeng/smartlock/lockuser/Assign.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+          <folding>
+            <element signature="e#1194#1195#0" expanded="true" />
+            <element signature="e#1254#1255#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lockuser-domain/src/test/java/cn/bobdeng/smartlock/lockuser/LockUserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
