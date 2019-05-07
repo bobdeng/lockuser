@@ -16,7 +16,7 @@ public class Assign {
         return assign;
     }
 
-    public static Assign newUser(UserLevel level, long start, long end) {
+    public static Assign newUser(UserLevel level, Long start, Long end) {
         Assign assign=new Assign();
         assign.privilege=LockPrivilege.newPrivilege(level,start,end);
         return assign;
@@ -34,7 +34,7 @@ public class Assign {
         return privilege.notExpire();
     }
 
-    public boolean timeRangeOverflow(long start, long end) {
+    public boolean timeRangeOverflow(Long start, Long end) {
         return privilege.timeRangeOverflow(start,end);
     }
 

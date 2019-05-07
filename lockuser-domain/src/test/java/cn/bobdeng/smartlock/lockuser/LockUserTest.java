@@ -20,21 +20,18 @@ public class LockUserTest {
     }
 
     @Test
-    public void testOwnerAssign() {
+    public void testOwnerAssign() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
-        LockUser adminUser = owner.createUser(LOCK_ID, USER_ADMIN, UserLevel.ADMIN);
+        LockUser adminUser = owner.createUser(LOCK_ID, USER_ADMIN, UserLevel.ADMIN, null, null);
         assertNotNull(adminUser);
-        assertFalse(adminUser.isOwner());
         assertEquals(LockUserRepositories.find(LOCK_ID, USER_ADMIN), adminUser);
         assertEquals(LockUserRepositories.find(LOCK_ID, USER_ADMIN).assign, adminUser.assign);
-        assertTrue(adminUser.canManage(UserLevel.ADVANCED));
-        assertFalse(adminUser.canManage(UserLevel.ADMIN));
         LockUserRepositoryImpl.time = 10000;
         assertTrue(adminUser.notExpire());
     }
 
     @Test
-    public void testOwnerAssignHasExpire() throws TimeRangeInvalidException,NoPrivilegeException {
+    public void testOwnerAssignHasExpire() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         long start = System.currentTimeMillis();
         long end = start + 100000;
@@ -48,7 +45,7 @@ public class LockUserTest {
     }
 
     @Test(expected = TimeRangeInvalidException.class)
-    public void adminWithExpireAssign() throws TimeRangeInvalidException,NoPrivilegeException {
+    public void adminWithExpireAssign1() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         long start = System.currentTimeMillis();
         long end = start + 100000;
@@ -57,26 +54,38 @@ public class LockUserTest {
         adminUser.createUser(LOCK_ID, "user_normal", UserLevel.ADVANCED, start - 1, end);
     }
 
-    @Test(expected = NoPrivilegeException.class)
-    public void assignWithNoPrivilege() throws TimeRangeInvalidException,NoPrivilegeException {
+    @Test(expected = TimeRangeInvalidException.class)
+    public void adminWithExpireAssign2() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         long start = System.currentTimeMillis();
         long end = start + 100000;
         LockUserRepositoryImpl.time = start + 1000;
         LockUser adminUser = owner.createUser(LOCK_ID, USER_ADMIN, UserLevel.ADMIN, start, end);
-        adminUser.createUser(LOCK_ID, "user_normal", UserLevel.ADMIN, start , end);
+        adminUser.createUser(LOCK_ID, "user_normal", UserLevel.ADVANCED, null, null);
+    }
+
+    @Test(expected = NoPrivilegeException.class)
+    public void assignWithNoPrivilege() throws TimeRangeInvalidException, NoPrivilegeException {
+        LockUser owner = createOwner();
+        long start = System.currentTimeMillis();
+        long end = start + 100000;
+        LockUserRepositoryImpl.time = start + 1000;
+        LockUser adminUser = owner.createUser(LOCK_ID, USER_ADMIN, UserLevel.ADMIN, start, end);
+        adminUser.createUser(LOCK_ID, "user_normal", UserLevel.ADMIN, start, end);
 
     }
+
     @Test(expected = NoPrivilegeException.class)
-    public void cantAssignOwner() throws TimeRangeInvalidException,NoPrivilegeException {
+    public void cantAssignOwner() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         long start = System.currentTimeMillis();
         long end = start + 100000;
         LockUserRepositoryImpl.time = start + 1000;
         LockUser adminUser = owner.createUser(LOCK_ID, USER_OWNER, UserLevel.ADMIN, start, end);
     }
+
     @Test(expected = NoPrivilegeException.class)
-    public void cantAssignHigher() throws TimeRangeInvalidException,NoPrivilegeException {
+    public void cantAssignHigher() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         long start = System.currentTimeMillis();
         long end = start + 100000;
@@ -87,7 +96,7 @@ public class LockUserTest {
     }
 
     @Test
-    public void reAssign() throws TimeRangeInvalidException,NoPrivilegeException {
+    public void reAssign() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         long start = System.currentTimeMillis();
         long end = start + 100000;
@@ -98,18 +107,18 @@ public class LockUserTest {
     }
 
     @Test
-    public void removeAssign() throws TimeRangeInvalidException,NoPrivilegeException {
+    public void removeAssign() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         long start = System.currentTimeMillis();
         long end = start + 100000;
         LockUserRepositoryImpl.time = start + 1000;
         LockUser adminUser = owner.createUser(LOCK_ID, USER_ADMIN, UserLevel.ADMIN, start, end);
         owner.removeUser(adminUser);
-        assertNull(LockUserRepositories.find(LOCK_ID,USER_ADMIN));
+        assertNull(LockUserRepositories.find(LOCK_ID, USER_ADMIN));
     }
 
     @Test(expected = NoPrivilegeException.class)
-    public void cantRemoveOwner() throws TimeRangeInvalidException,NoPrivilegeException {
+    public void cantRemoveOwner() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         long start = System.currentTimeMillis();
         long end = start + 100000;
@@ -118,7 +127,7 @@ public class LockUserTest {
     }
 
     @Test(expected = NoPrivilegeException.class)
-    public void cantRemoveHigher() throws TimeRangeInvalidException,NoPrivilegeException {
+    public void cantRemoveHigher() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         long start = System.currentTimeMillis();
         long end = start + 100000;
@@ -131,7 +140,7 @@ public class LockUserTest {
 
     private LockUser createOwner() {
         LockUser owner = LockUserFactory.createOwner(LOCK_ID, USER_OWNER);
-        assertTrue(owner.isOwner());
+        assertTrue(owner.is(UserLevel.OWNER));
         assertEquals(LockUserRepositories.find(LOCK_ID, USER_OWNER), owner);
         return owner;
     }

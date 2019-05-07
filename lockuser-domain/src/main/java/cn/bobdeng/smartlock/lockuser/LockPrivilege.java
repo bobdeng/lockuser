@@ -19,7 +19,7 @@ class LockPrivilege {
         return lockPrivilege;
     }
 
-    public static LockPrivilege newPrivilege(UserLevel level, long start, long end) {
+    public static LockPrivilege newPrivilege(UserLevel level, Long start, Long end) {
         LockPrivilege lockPrivilege = newPrivilege(level);
         lockPrivilege.timeRange = new TimeRange(start, end);
         return lockPrivilege;
@@ -37,7 +37,7 @@ class LockPrivilege {
         return timeRange.notExpire();
     }
 
-    public boolean timeRangeOverflow(long start, long end) {
+    public boolean timeRangeOverflow(Long start, Long end) {
         return timeRange.overflow(start,end);
     }
 

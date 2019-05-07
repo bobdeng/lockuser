@@ -20,9 +20,12 @@ class TimeRange {
         return LockUserRepositories.currentTime()>=start && LockUserRepositories.currentTime()<=end;
     }
 
-    public boolean overflow(long start, long end) {
+    public boolean overflow(Long start, Long end) {
         if(this.start==null || this.end==null){
             return false;
+        }
+        if(start==null || end==null){
+            return true;
         }
         return this.start<=start || this.end>=end;
     }
