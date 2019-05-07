@@ -48,4 +48,8 @@ class LockPrivilege {
     public boolean canManage(LockPrivilege privilege) {
         return level.canManage(privilege.level);
     }
+
+    public boolean isBigger(UserLevel level) {
+        return level.value>=level.value;
+    }
 }

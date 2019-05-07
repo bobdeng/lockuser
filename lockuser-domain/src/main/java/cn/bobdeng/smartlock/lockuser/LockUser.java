@@ -48,4 +48,8 @@ public class LockUser {
         LockUserManageRuleChecker.checkUserManage(this, user);
         LockUserRepositories.remove(user);
     }
+
+    public boolean isBigger(UserLevel level) {
+        return assign.isBigger(level);
+    }
 }

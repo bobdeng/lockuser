@@ -8,8 +8,15 @@ public class LockUserManageRuleChecker {
 
     static void checkAssign(LockUser operator, String lockId, String userId, UserLevel level, Long start, Long end) throws NoPrivilegeException, TimeRangeInvalidException {
         LockUser existLockUser = LockUserRepositories.find(lockId, userId);
+        checkAddUser(operator);
         checkAssignLevel(operator, level, existLockUser);
         checkAssignTimeRange(operator, start, end);
+    }
+
+    private static void checkAddUser(LockUser operator) throws NoPrivilegeException {
+        if (!operator.isBigger(UserLevel.ADMIN)) {
+            throw new NoPrivilegeException();
+        }
     }
 
     static void checkAssignTimeRange(LockUser operator, Long start, Long end) throws TimeRangeInvalidException {

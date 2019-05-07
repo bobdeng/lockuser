@@ -45,4 +45,8 @@ public class Assign {
     public boolean canManage(Assign assign) {
         return privilege.canManage(assign.privilege);
     }
+
+    public boolean isBigger(UserLevel level) {
+        return privilege.isBigger(level);
+    }
 }
