@@ -16,11 +16,29 @@ public class Assign {
         return assign;
     }
 
+    public static Assign newUser(UserLevel level, long start, long end) {
+        Assign assign=new Assign();
+        assign.privilege=LockPrivilege.newPrivilege(level,start,end);
+        return assign;
+    }
+
     public boolean isOwner() {
         return privilege.isOwner();
     }
 
     public boolean canManage(UserLevel userLevel) {
         return privilege.canManage(userLevel);
+    }
+
+    public boolean notExpire() {
+        return privilege.notExpire();
+    }
+
+    public boolean timeRangeOverflow(long start, long end) {
+        return privilege.timeRangeOverflow(start,end);
+    }
+
+    public boolean is(UserLevel level) {
+        return privilege.is(level);
     }
 }

@@ -16,7 +16,7 @@ public class LockUserTest {
 
     @Before
     public void setUp() throws Exception {
-        LockUserRepositories.lockUserRepository=new LockUserRepositoryImpl();
+        LockUserRepositories.lockUserRepository = new LockUserRepositoryImpl();
     }
 
     @Test
@@ -29,13 +29,85 @@ public class LockUserTest {
         assertEquals(LockUserRepositories.find(LOCK_ID, USER_ADMIN).assign, adminUser.assign);
         assertTrue(adminUser.canManage(UserLevel.ADVANCED));
         assertFalse(adminUser.canManage(UserLevel.ADMIN));
+        LockUserRepositoryImpl.time = 10000;
+        assertTrue(adminUser.notExpire());
     }
 
     @Test
-    public void testOwnerAssignHasExpire() {
+    public void testOwnerAssignHasExpire() throws TimeRangeInvalidException,NoPrivilegeException {
         LockUser owner = createOwner();
-        LockUser adminUser = owner.createUser(LOCK_ID, USER_ADMIN, UserLevel.ADMIN);
+        long start = System.currentTimeMillis();
+        long end = start + 100000;
+        LockUserRepositoryImpl.time = start + 1000;
+        LockUser adminUser = owner.createUser(LOCK_ID, USER_ADMIN, UserLevel.ADMIN, start, end);
+        assertTrue(adminUser.notExpire());
+        LockUserRepositoryImpl.time = start - 1000;
+        assertFalse(adminUser.notExpire());
+        LockUserRepositoryImpl.time = end + 1000;
+        assertFalse(adminUser.notExpire());
     }
+
+    @Test(expected = TimeRangeInvalidException.class)
+    public void adminWithExpireAssign() throws TimeRangeInvalidException,NoPrivilegeException {
+        LockUser owner = createOwner();
+        long start = System.currentTimeMillis();
+        long end = start + 100000;
+        LockUserRepositoryImpl.time = start + 1000;
+        LockUser adminUser = owner.createUser(LOCK_ID, USER_ADMIN, UserLevel.ADMIN, start, end);
+        adminUser.createUser(LOCK_ID, "user_normal", UserLevel.ADVANCED, start - 1, end);
+    }
+
+    @Test(expected = NoPrivilegeException.class)
+    public void assignWithNoPrivilege() throws TimeRangeInvalidException,NoPrivilegeException {
+        LockUser owner = createOwner();
+        long start = System.currentTimeMillis();
+        long end = start + 100000;
+        LockUserRepositoryImpl.time = start + 1000;
+        LockUser adminUser = owner.createUser(LOCK_ID, USER_ADMIN, UserLevel.ADMIN, start, end);
+        adminUser.createUser(LOCK_ID, "user_normal", UserLevel.ADMIN, start , end);
+
+    }
+    @Test(expected = NoPrivilegeException.class)
+    public void cantAssignOwner() throws TimeRangeInvalidException,NoPrivilegeException {
+        LockUser owner = createOwner();
+        long start = System.currentTimeMillis();
+        long end = start + 100000;
+        LockUserRepositoryImpl.time = start + 1000;
+        LockUser adminUser = owner.createUser(LOCK_ID, USER_OWNER, UserLevel.ADMIN, start, end);
+    }
+
+    @Test
+    public void reAssign() throws TimeRangeInvalidException,NoPrivilegeException {
+        LockUser owner = createOwner();
+        long start = System.currentTimeMillis();
+        long end = start + 100000;
+        LockUserRepositoryImpl.time = start + 1000;
+        LockUser adminUser = owner.createUser(LOCK_ID, USER_ADMIN, UserLevel.ADMIN, start, end);
+        adminUser = owner.createUser(LOCK_ID, USER_ADMIN, UserLevel.NORMAL, start, end);
+        assertTrue(adminUser.is(UserLevel.NORMAL));
+    }
+
+    @Test
+    public void removeAssign() throws TimeRangeInvalidException,NoPrivilegeException {
+        LockUser owner = createOwner();
+        long start = System.currentTimeMillis();
+        long end = start + 100000;
+        LockUserRepositoryImpl.time = start + 1000;
+        LockUser adminUser = owner.createUser(LOCK_ID, USER_ADMIN, UserLevel.ADMIN, start, end);
+        adminUser = owner.createUser(LOCK_ID, USER_ADMIN, UserLevel.NORMAL, start, end);
+        owner.removeUser(adminUser);
+        assertNull(LockUserRepositories.find(LOCK_ID,USER_ADMIN));
+    }
+
+    @Test(expected = NoPrivilegeException.class)
+    public void cantRemoveOwner() throws TimeRangeInvalidException,NoPrivilegeException {
+        LockUser owner = createOwner();
+        long start = System.currentTimeMillis();
+        long end = start + 100000;
+        LockUserRepositoryImpl.time = start + 1000;
+        owner.removeUser(owner);
+    }
+
 
     private LockUser createOwner() {
         LockUser owner = LockUserFactory.createOwner(LOCK_ID, USER_OWNER);

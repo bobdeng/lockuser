@@ -37,4 +37,39 @@ public class LockUser {
     public boolean canManage(UserLevel userLevel) {
         return assign.canManage(userLevel);
     }
+
+    public LockUser createUser(String lockId, String userId, UserLevel level, long start, long end) throws TimeRangeInvalidException,NoPrivilegeException{
+        if(!this.canManage(level)){
+            throw new NoPrivilegeException();
+        }
+        LockUser existLockUser = LockUserRepositories.find(lockId, userId);
+        if(existLockUser!=null && existLockUser.isOwner()){
+            throw new NoPrivilegeException();
+        }
+        LockUser lockUser = new LockUser(new LockUserId(lockId,userId), Assign.newUser(level,start,end));
+        if(this.overAssignTimeRange(start,end)){
+            throw new TimeRangeInvalidException();
+        }
+        LockUserRepositories.saveLockUser(lockUser);
+        return lockUser;
+    }
+
+    private boolean overAssignTimeRange(long start, long end) {
+        return assign.timeRangeOverflow(start,end);
+    }
+
+    public boolean notExpire() {
+        return assign.notExpire();
+    }
+
+    public boolean is(UserLevel normal) {
+        return assign.is(normal);
+    }
+
+    public void removeUser(LockUser user) throws NoPrivilegeException{
+        if(user.isOwner()){
+            throw new NoPrivilegeException();
+        }
+        LockUserRepositories.remove(user);
+    }
 }
