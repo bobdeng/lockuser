@@ -1,6 +1,5 @@
 package cn.bobdeng.smartlock.lockuser;
 
-import java.util.Objects;
 
 public class LockUser {
     LockUserId id;
@@ -11,9 +10,9 @@ public class LockUser {
         this.assign = assign;
     }
 
-    public LockUser createUser(String lockId, String userId, UserLevel level, Long start, Long end) throws TimeRangeInvalidException, NoPrivilegeException {
-        LockUserManageRuleChecker.checkAssign(this, lockId, userId, level, start, end);
-        LockUser lockUser = new LockUser(new LockUserId(lockId, userId), Assign.newUser(level, start, end));
+    public LockUser createUser(LockUserId id, UserName userName,LockPrivilege lockPrivilege) throws TimeRangeInvalidException, NoPrivilegeException {
+        LockUserManageRuleChecker.checkAssign(this, id,lockPrivilege);
+        LockUser lockUser = new LockUser(id, new Assign(lockPrivilege,userName));
         LockUserRepositories.saveLockUser(lockUser);
         return lockUser;
     }
@@ -22,8 +21,8 @@ public class LockUser {
         return assign.notExpire();
     }
 
-    boolean overAssignTimeRange(Long start, Long end) {
-        return assign.timeRangeOverflow(start, end);
+    boolean overAssignTimeRange(TimeRange timeRange) {
+        return assign.timeRangeOverflow(timeRange);
     }
 
     boolean is(UserLevel normal) {

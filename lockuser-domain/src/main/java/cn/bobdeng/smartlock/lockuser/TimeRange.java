@@ -14,19 +14,31 @@ class TimeRange {
     }
 
     public boolean notExpire() {
-        if(start==null || end==null){
+        if (start == null || end == null) {
             return true;
         }
-        return LockUserRepositories.currentTime()>=start && LockUserRepositories.currentTime()<=end;
+        return LockUserRepositories.currentTime() >= start && LockUserRepositories.currentTime() <= end;
     }
 
-    public boolean overflow(Long start, Long end) {
-        if(this.start==null || this.end==null){
+    public boolean overflow(TimeRange timeRange) {
+        if (isEmpty()) {
             return false;
         }
-        if(start==null || end==null){
+        if (timeRange.isEmpty()) {
             return true;
         }
-        return this.start<=start || this.end>=end;
+        return this.start <= start || this.end >= end;
+    }
+
+    private boolean isEmpty() {
+        return start == null || end == null;
+    }
+
+    public long beforeStart(int offset) {
+        return start-offset;
+    }
+
+    public long afterEnd(int offset) {
+        return end+offset;
     }
 }

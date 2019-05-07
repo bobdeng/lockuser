@@ -14,10 +14,8 @@ class LockPrivilege {
         return lockPrivilege;
     }
 
-    public static LockPrivilege newPrivilege(UserLevel level, Long start, Long end) {
-        LockPrivilege lockPrivilege = newPrivilege(level);
-        lockPrivilege.timeRange = new TimeRange(start, end);
-        return lockPrivilege;
+    public static LockPrivilege newPrivilege(UserLevel level, TimeRange timeRange) {
+        return new LockPrivilege(new PrivilegeLevel(level),timeRange);
     }
 
     public boolean canManage(UserLevel userLevel) {
@@ -28,8 +26,8 @@ class LockPrivilege {
         return timeRange.notExpire();
     }
 
-    public boolean timeRangeOverflow(Long start, Long end) {
-        return timeRange.overflow(start,end);
+    public boolean timeRangeOverflow(TimeRange timeRange) {
+        return this.timeRange.overflow(timeRange);
     }
 
     public boolean is(UserLevel level) {

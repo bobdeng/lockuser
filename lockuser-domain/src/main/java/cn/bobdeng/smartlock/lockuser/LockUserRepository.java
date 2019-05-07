@@ -1,7 +1,7 @@
 package cn.bobdeng.smartlock.lockuser;
 
 public interface LockUserRepository {
-    LockUser find(String lockId, String userId);
+    LockUser find(LockUserId id);
 
     void save(LockUser lockUser);
 

@@ -1,16 +1,16 @@
 package cn.bobdeng.smartlock.lockuser;
 
 public class LockUserManageRuleChecker {
-    static boolean canManage(LockUser operator, UserLevel userLevel) {
-        return operator.assign.canManage(userLevel);
+    static boolean canManage(LockUser operator, PrivilegeLevel userLevel) {
+        return operator.assign.canManage(userLevel.level);
     }
 
 
-    static void checkAssign(LockUser operator, String lockId, String userId, UserLevel level, Long start, Long end) throws NoPrivilegeException, TimeRangeInvalidException {
-        LockUser existLockUser = LockUserRepositories.find(lockId, userId);
+    static void checkAssign(LockUser operator, LockUserId id,LockPrivilege privilege) throws NoPrivilegeException, TimeRangeInvalidException {
+        LockUser existLockUser = LockUserRepositories.find(id);
         checkAddUser(operator);
-        checkAssignLevel(operator, level, existLockUser);
-        checkAssignTimeRange(operator, start, end);
+        checkAssignLevel(operator, privilege.level, existLockUser);
+        checkAssignTimeRange(operator,privilege.timeRange);
     }
 
     private static void checkAddUser(LockUser operator) throws NoPrivilegeException {
@@ -19,14 +19,14 @@ public class LockUserManageRuleChecker {
         }
     }
 
-    static void checkAssignTimeRange(LockUser operator, Long start, Long end) throws TimeRangeInvalidException {
-        if (operator.overAssignTimeRange(start, end)) {
+    static void checkAssignTimeRange(LockUser operator, TimeRange timeRange) throws TimeRangeInvalidException {
+        if (operator.overAssignTimeRange(timeRange)) {
             throw new TimeRangeInvalidException();
         }
     }
 
-    static void checkAssignLevel(LockUser operator, UserLevel level, LockUser existLockUser) throws NoPrivilegeException {
-        if (!canManage(operator,level)) {
+    static void checkAssignLevel(LockUser operator, PrivilegeLevel privilegeLevel, LockUser existLockUser) throws NoPrivilegeException {
+        if (!canManage(operator,privilegeLevel)) {
             throw new NoPrivilegeException();
         }
         checkUserManage(operator, existLockUser);

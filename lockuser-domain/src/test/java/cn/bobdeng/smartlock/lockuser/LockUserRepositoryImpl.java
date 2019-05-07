@@ -7,8 +7,8 @@ public class LockUserRepositoryImpl implements LockUserRepository{
     public static long time;
     private Map<LockUserId,LockUser> lockUserMap=new HashMap<>();
     @Override
-    public LockUser find(String lockId, String userId) {
-        return lockUserMap.get(new LockUserId(lockId,userId));
+    public LockUser find(LockUserId id) {
+        return lockUserMap.get(id);
     }
 
     @Override

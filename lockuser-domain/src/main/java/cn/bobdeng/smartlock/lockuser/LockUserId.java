@@ -2,7 +2,7 @@ package cn.bobdeng.smartlock.lockuser;
 
 import java.util.Objects;
 
-class LockUserId {
+public class LockUserId {
     LockId lockId;
     UserID userId;
 

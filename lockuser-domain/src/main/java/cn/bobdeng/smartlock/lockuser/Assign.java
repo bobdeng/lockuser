@@ -4,18 +4,14 @@ public class Assign {
     LockPrivilege privilege;
     UserName userName;
 
+    public Assign(LockPrivilege privilege, UserName userName) {
+        this.privilege = privilege;
+        this.userName = userName;
+    }
+
     public static Assign newOwner() {
-        Assign assign=new Assign();
-        assign.privilege=LockPrivilege.newPrivilege(UserLevel.OWNER);
-        return assign;
+        return new Assign(LockPrivilege.newPrivilege(UserLevel.OWNER),new UserName(""));
     }
-
-    public static Assign newUser(UserLevel level, Long start, Long end) {
-        Assign assign=new Assign();
-        assign.privilege=LockPrivilege.newPrivilege(level,start,end);
-        return assign;
-    }
-
 
     public boolean canManage(UserLevel userLevel) {
         return privilege.canManage(userLevel);
@@ -25,8 +21,8 @@ public class Assign {
         return privilege.notExpire();
     }
 
-    public boolean timeRangeOverflow(Long start, Long end) {
-        return privilege.timeRangeOverflow(start,end);
+    public boolean timeRangeOverflow(TimeRange timeRange) {
+        return privilege.timeRangeOverflow(timeRange);
     }
 
     public boolean is(UserLevel level) {
