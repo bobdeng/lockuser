@@ -1,5 +1,7 @@
 package cn.bobdeng.smartlock.lockuser;
 
+import java.util.Optional;
+
 public class LockUserFactory {
     public static LockUser createOwner(LockUserId lockUserId) {
         Assign assign = Assign.newOwner();

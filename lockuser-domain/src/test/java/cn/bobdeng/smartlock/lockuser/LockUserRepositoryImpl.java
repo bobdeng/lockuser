@@ -1,7 +1,10 @@
 package cn.bobdeng.smartlock.lockuser;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class LockUserRepositoryImpl implements LockUserRepository{
     public static long time;
@@ -24,5 +27,27 @@ public class LockUserRepositoryImpl implements LockUserRepository{
     @Override
     public void remove(LockUser user) {
         lockUserMap.remove(user.id);
+    }
+
+    @Override
+    public List<LockUser> listLockUsersByLock(String lockId) {
+        return lockUserMap.values()
+                .stream()
+                .filter(lockUser -> lockUser.id.lockId.id.equals(lockId))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public void deleteByLockId(String lockId) {
+
+    }
+
+    @Override
+    public Optional<LockUser> findOwner(LockId lockId) {
+        return lockUserMap.values()
+                .stream()
+                .filter(lockUser -> lockUser.id.lockId.id.equals(lockId))
+                .filter(lockUser -> lockUser.is(UserLevel.OWNER))
+                .findFirst();
     }
 }
