@@ -14,7 +14,7 @@ public interface LockUserDAO extends CrudRepository<LockUserDO, Long> {
 
     Stream<LockUserDO> findByLockId(String lockId);
 
-    @Query("delete from LockUserDO as a where a.lock.id=:lockId")
+    @Query("delete from LockUserDO as a where a.lockId=:lockId")
     @Modifying
     @Transactional
     void deleteByLockId(@Param("lockId") String lockId);
