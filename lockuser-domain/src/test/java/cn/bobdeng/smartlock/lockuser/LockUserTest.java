@@ -23,7 +23,7 @@ public class LockUserTest {
     @Test
     public void testOwnerAssign() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
-        LockUser adminUser = owner.createUser(User1LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADMIN));
+        LockUser adminUser = owner.assignUser(User1LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADMIN));
         assertEquals(LockUserRepositories.find(User1LockId), adminUser);
         assertEquals(LockUserRepositories.find(User1LockId).assign, adminUser.assign);
         LockUserRepositoryImpl.time = 10000;
@@ -48,35 +48,35 @@ public class LockUserTest {
         long end = start + 100000;
         timeRange = new TimeRange(start, end);
         LockUserRepositoryImpl.time = start + 1000;
-        return owner.createUser(User1LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADMIN, timeRange));
+        return owner.assignUser(User1LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADMIN, timeRange));
     }
 
     @Test
     public void onlyAdminCanCreate() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
-        LockUser advancedUser = owner.createUser(User1LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADVANCED));
-        advancedUser.createUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.NORMAL));
+        LockUser advancedUser = owner.assignUser(User1LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADVANCED));
+        advancedUser.assignUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.NORMAL));
     }
 
     @Test(expected = TimeRangeInvalidException.class)
     public void adminWithExpireAssign1() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         LockUser adminUser = ownerCreateAdmin(owner);
-        adminUser.createUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADVANCED,new TimeRange(timeRange.beforeStart(1),timeRange.afterEnd(0))));
+        adminUser.assignUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADVANCED,new TimeRange(timeRange.beforeStart(1),timeRange.afterEnd(0))));
     }
 
     @Test(expected = TimeRangeInvalidException.class)
     public void adminWithExpireAssign2() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         LockUser adminUser = ownerCreateAdmin(owner);
-        adminUser.createUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADVANCED));
+        adminUser.assignUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADVANCED));
     }
 
     @Test(expected = NoPrivilegeException.class)
     public void assignWithNoPrivilege() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         LockUser adminUser = ownerCreateAdmin(owner);
-        adminUser.createUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADMIN,timeRange));
+        adminUser.assignUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADMIN,timeRange));
 
     }
 
@@ -86,22 +86,22 @@ public class LockUserTest {
         long start = System.currentTimeMillis();
         long end = start + 100000;
         LockUserRepositoryImpl.time = start + 1000;
-        owner.createUser(OwnerLockId,new UserName(""),LockPrivilege.newPrivilege(UserLevel.ADMIN,timeRange));
+        owner.assignUser(OwnerLockId,new UserName(""),LockPrivilege.newPrivilege(UserLevel.ADMIN,timeRange));
     }
 
     @Test(expected = NoPrivilegeException.class)
     public void cantAssignHigher() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         LockUser adminUser1 = ownerCreateAdmin(owner);
-        LockUser adminUser2 = owner.createUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADMIN,timeRange));
-        adminUser1.createUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.NORMAL,timeRange));
+        LockUser adminUser2 = owner.assignUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADMIN,timeRange));
+        adminUser1.assignUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.NORMAL,timeRange));
     }
 
     @Test
     public void reAssign() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         ownerCreateAdmin(owner);
-        LockUser adminUser = owner.createUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.NORMAL,timeRange));
+        LockUser adminUser = owner.assignUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.NORMAL,timeRange));
         assertTrue(adminUser.is(UserLevel.NORMAL));
     }
 
@@ -123,7 +123,7 @@ public class LockUserTest {
     public void cantRemoveHigher() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         LockUser adminUser1 = ownerCreateAdmin(owner);
-        LockUser adminUser2 = owner.createUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADMIN,timeRange));
+        LockUser adminUser2 = owner.assignUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADMIN,timeRange));
         adminUser1.removeUser(adminUser2);
     }
 

@@ -1,6 +1,6 @@
 package cn.bobdeng.smartlock.lockuser;
 
-class TimeRange {
+public class TimeRange {
     Long start;
     Long end;
 

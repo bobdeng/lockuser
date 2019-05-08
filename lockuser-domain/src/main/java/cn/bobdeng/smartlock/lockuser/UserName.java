@@ -1,6 +1,6 @@
 package cn.bobdeng.smartlock.lockuser;
 
-class UserName {
+public class UserName {
     String name;
 
     public UserName(String name) {

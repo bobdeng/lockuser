@@ -28,7 +28,7 @@ public class LockUserRepositories {
     public static void deleteByLockId(String lockId) {
         lockUserRepository.deleteByLockId(lockId);
     }
-    public Optional<LockUser> findOwner(LockId lockId){
+    public static Optional<LockUser> findOwner(LockId lockId){
         return lockUserRepository.findOwner(lockId);
     }
 }

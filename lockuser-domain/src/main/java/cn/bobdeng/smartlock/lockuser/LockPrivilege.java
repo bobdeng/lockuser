@@ -1,6 +1,6 @@
 package cn.bobdeng.smartlock.lockuser;
 
-class LockPrivilege {
+public class LockPrivilege {
     PrivilegeLevel level;
     TimeRange timeRange;
 

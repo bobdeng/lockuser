@@ -19,6 +19,6 @@ public interface LockUserDAO extends CrudRepository<LockUserDO, Long> {
     @Transactional
     void deleteByLockId(@Param("lockId") String lockId);
 
-    @Query("select a from LockUserDO as a where a.lock.id=:lockId and a.level=1000")
+    @Query("select a from LockUserDO as a where a.lockId=:lockId and a.level=1000")
     Optional<LockUserDO> findLockOwner(@Param("lockId") String lockId);
 }
