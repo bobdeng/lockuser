@@ -31,7 +31,7 @@ public class TimeRange {
     }
 
     private boolean isEmpty() {
-        return start == null || end == null;
+        return start == null || end == null ||start==0 || end==0;
     }
 
     public long beforeStart(int offset) {

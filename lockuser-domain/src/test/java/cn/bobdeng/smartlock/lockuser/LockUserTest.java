@@ -54,7 +54,7 @@ public class LockUserTest {
     @Test
     public void onlyAdminCanCreate() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
-        LockUser advancedUser = owner.assignUser(User1LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADVANCED));
+        LockUser advancedUser = owner.assignUser(User1LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADVANCED,new TimeRange(0l,0l)));
         advancedUser.assignUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.NORMAL));
     }
 

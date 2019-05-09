@@ -34,6 +34,7 @@ public class LockUserDO {
                 .level(user.assign.privilege.level.level.value)
                 .userId(user.id.userId.id)
                 .name(user.assign.userName.name)
+                .lockId(user.id.lockId.id)
                 .build();
     }
 
