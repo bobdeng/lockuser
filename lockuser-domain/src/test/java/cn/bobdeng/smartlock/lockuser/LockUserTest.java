@@ -42,6 +42,13 @@ public class LockUserTest {
         LockUserRepositoryImpl.time = timeRange.afterEnd(1000);
         assertFalse(adminUser.notExpire());
     }
+    @Test
+    public void admin_assign_normal() throws NoPrivilegeException, TimeRangeInvalidException {
+        LockUser owner = createOwner();
+        LockUser admin = owner.assignUser(User1LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADMIN, new TimeRange(0l,0l)));
+        long now=System.currentTimeMillis();
+        admin.assignUser(User2LockId,new UserName(null),LockPrivilege.newPrivilege(UserLevel.NORMAL,new TimeRange(now,now+100000)));
+    }
 
     private LockUser ownerCreateAdmin(LockUser owner) throws TimeRangeInvalidException, NoPrivilegeException {
         long start = System.currentTimeMillis();
