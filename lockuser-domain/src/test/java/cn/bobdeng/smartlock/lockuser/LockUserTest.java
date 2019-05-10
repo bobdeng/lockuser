@@ -61,8 +61,10 @@ public class LockUserTest {
     @Test
     public void onlyAdminCanCreate() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
+        LockUserRepositoryImpl.time=System.currentTimeMillis();
         LockUser advancedUser = owner.assignUser(User1LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADVANCED,new TimeRange(0l,0l)));
         advancedUser.assignUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.NORMAL));
+        assertTrue(advancedUser.notExpire());
     }
 
     @Test(expected = TimeRangeInvalidException.class)

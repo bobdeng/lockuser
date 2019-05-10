@@ -14,7 +14,7 @@ public class TimeRange {
     }
 
     public boolean notExpire() {
-        if (start == null || end == null) {
+        if (isEmpty()) {
             return true;
         }
         return LockUserRepositories.currentTime() >= start && LockUserRepositories.currentTime() <= end;
@@ -31,14 +31,14 @@ public class TimeRange {
     }
 
     private boolean isEmpty() {
-        return start == null || end == null ||start==0 || end==0;
+        return start == null || end == null || start == 0 || end == 0;
     }
 
     public long beforeStart(int offset) {
-        return start-offset;
+        return start - offset;
     }
 
     public long afterEnd(int offset) {
-        return end+offset;
+        return end + offset;
     }
 }
