@@ -44,6 +44,8 @@ public class LockUserDO {
         UserLevel userLevel = UserLevel.of(level);
         TimeRange timeRange = new TimeRange(start, end);
         LockPrivilege lockPrivilege = LockPrivilege.newPrivilege(userLevel, timeRange);
-        return LockUserFactory.newInstance(id, userName, lockPrivilege);
+        LockUser lockUser = LockUserFactory.newInstance(id, userName, lockPrivilege);
+        lockUser.uniqueId=new UniqueId(this.getId());
+        return lockUser;
     }
 }
