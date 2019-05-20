@@ -16,6 +16,7 @@ public class LockUserRepositoryImpl implements LockUserRepository{
 
     @Override
     public void save(LockUser lockUser) {
+        lockUser.uniqueId=new UniqueId(System.currentTimeMillis());
         lockUserMap.put(lockUser.id,lockUser);
     }
 

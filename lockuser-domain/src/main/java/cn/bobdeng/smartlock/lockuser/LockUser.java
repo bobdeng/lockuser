@@ -9,7 +9,6 @@ public class LockUser {
     LockUser(LockUserId id, Assign assign) {
         this.id = id;
         this.assign = assign;
-        this.uniqueId=new UniqueId(0);
     }
 
     public LockUser assignUser(LockUserId id, UserName userName, LockPrivilege lockPrivilege) throws TimeRangeInvalidException, NoPrivilegeException {
