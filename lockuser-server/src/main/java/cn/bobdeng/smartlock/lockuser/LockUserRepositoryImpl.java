@@ -30,7 +30,9 @@ public class LockUserRepositoryImpl implements LockUserRepository {
         LockUserDO lockUserDO = LockUserDO.from(lockUser);
         lockUserDAO.findByLockIdAndUserId(lockUser.id.lockId.id, lockUser.id.userId.id)
                 .ifPresent(lockUserDO1 -> lockUserDO.setId(lockUserDO1.getId()));
-        lockUserDAO.save(lockUserDO);
+        LockUserDO saved = lockUserDAO.save(lockUserDO);
+        lockUser.uniqueId = new UniqueId(saved.getId());
+
     }
 
     @Override
