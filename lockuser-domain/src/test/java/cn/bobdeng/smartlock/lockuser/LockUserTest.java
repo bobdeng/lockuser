@@ -28,6 +28,7 @@ public class LockUserTest {
         assertEquals(LockUserRepositories.find(User1LockId).assign, adminUser.assign);
         LockUserRepositoryImpl.time = 10000;
         assertTrue(adminUser.notExpire());
+        assert owner.uniqueId!=null;
         LockUsers lockUsers = LockUsers.loadByLock("lock_123");
         assertEquals(lockUsers.size(),2);
     }

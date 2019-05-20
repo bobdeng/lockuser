@@ -2,12 +2,14 @@ package cn.bobdeng.smartlock.lockuser;
 
 
 public class LockUser {
+    UniqueId uniqueId;
     LockUserId id;
     Assign assign;
 
     LockUser(LockUserId id, Assign assign) {
         this.id = id;
         this.assign = assign;
+        this.uniqueId=new UniqueId(0);
     }
 
     public LockUser assignUser(LockUserId id, UserName userName, LockPrivilege lockPrivilege) throws TimeRangeInvalidException, NoPrivilegeException {
