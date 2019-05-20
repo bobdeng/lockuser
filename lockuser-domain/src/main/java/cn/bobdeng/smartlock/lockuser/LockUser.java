@@ -60,5 +60,8 @@ public class LockUser {
     public Long getEnd() {
         return assign.privilege.timeRange.end;
     }
+    public long getUniqueId(){
+        return uniqueId.id;
+    }
 
 }
