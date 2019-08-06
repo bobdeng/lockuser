@@ -12,15 +12,14 @@
         <module>lockuser-domain</module>
         <module>lockuser-server</module>
     </modules>
-
     <distributionManagement>
-        <snapshotRepository>
-            <id>ag-snapshots</id>
-            <url>http://nexus.uuzhihui.cn:8081/repository/maven-snapshots/</url>
-        </snapshotRepository>
         <repository>
             <id>ag-releases</id>
-            <url>http://nexus.uuzhihui.cn:8081/repository/maven-releases/</url>
+            <url>https://repo.rdc.aliyun.com/repository/37898-release-Bi40SO/</url>
         </repository>
+        <snapshotRepository>
+            <id>ag-snapshots</id>
+            <url>https://repo.rdc.aliyun.com/repository/37898-snapshot-pOzUJP/</url>
+        </snapshotRepository>
     </distributionManagement>
 </project>
