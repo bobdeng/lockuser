@@ -1,6 +1,7 @@
 package cn.bobdeng.smartlock.lockuser;
 
 
+
 import java.util.stream.Stream;
 
 public enum UserLevel {
@@ -8,10 +9,15 @@ public enum UserLevel {
     int value;
     String description;
 
+    public String getDescription() {
+        return description;
+    }
+
     UserLevel(int value, String description) {
         this.value = value;
         this.description = description;
     }
+
 
     public static UserLevel of(int level) {
         return Stream.of(values())
