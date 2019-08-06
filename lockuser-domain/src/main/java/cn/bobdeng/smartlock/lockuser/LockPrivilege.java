@@ -39,6 +39,6 @@ public class LockPrivilege {
     }
 
     public boolean isBigger(UserLevel level) {
-        return level.value>=level.value;
+        return this.level.isBigger(level);
     }
 }

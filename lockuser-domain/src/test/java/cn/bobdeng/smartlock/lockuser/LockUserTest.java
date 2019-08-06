@@ -59,8 +59,8 @@ public class LockUserTest {
         return owner.assignUser(User1LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADMIN, timeRange));
     }
 
-    @Test
-    public void onlyAdminCanCreate() throws TimeRangeInvalidException, NoPrivilegeException {
+    @Test(expected = NoPrivilegeException.class)
+    public void 高级用户不能创建新用户() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         LockUserRepositoryImpl.time=System.currentTimeMillis();
         LockUser advancedUser = owner.assignUser(User1LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADVANCED,new TimeRange(0l,0l)));
@@ -69,21 +69,21 @@ public class LockUserTest {
     }
 
     @Test(expected = TimeRangeInvalidException.class)
-    public void adminWithExpireAssign1() throws TimeRangeInvalidException, NoPrivilegeException {
+    public void 不能超出自己授权的时间1() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         LockUser adminUser = ownerCreateAdmin(owner);
         adminUser.assignUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADVANCED,new TimeRange(timeRange.beforeStart(1),timeRange.afterEnd(0))));
     }
 
     @Test(expected = TimeRangeInvalidException.class)
-    public void adminWithExpireAssign2() throws TimeRangeInvalidException, NoPrivilegeException {
+    public void 不能超出自己授权的时间2() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         LockUser adminUser = ownerCreateAdmin(owner);
         adminUser.assignUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADVANCED));
     }
 
     @Test(expected = NoPrivilegeException.class)
-    public void assignWithNoPrivilege() throws TimeRangeInvalidException, NoPrivilegeException {
+    public void 管理员不能授权超过管理员() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         LockUser adminUser = ownerCreateAdmin(owner);
         adminUser.assignUser(User2LockId, new UserName(""), LockPrivilege.newPrivilege(UserLevel.ADMIN,timeRange));
@@ -91,7 +91,7 @@ public class LockUserTest {
     }
 
     @Test(expected = NoPrivilegeException.class)
-    public void cantAssignOwner() throws TimeRangeInvalidException, NoPrivilegeException {
+    public void 不能给拥有者授权() throws TimeRangeInvalidException, NoPrivilegeException {
         LockUser owner = createOwner();
         long start = System.currentTimeMillis();
         long end = start + 100000;

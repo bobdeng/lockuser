@@ -8,10 +8,14 @@ class PrivilegeLevel {
     }
 
     public boolean canManage(UserLevel userLevel) {
-        return level.value>userLevel.value;
+        return level.value > userLevel.value;
     }
 
     public boolean canManage(PrivilegeLevel level) {
         return this.canManage(level.level);
+    }
+
+    public boolean isBigger(UserLevel level) {
+        return this.level.value >= level.value;
     }
 }
